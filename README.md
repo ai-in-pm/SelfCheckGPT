@@ -2,6 +2,9 @@
 
 SelfCheckGPT is a Python library for detecting hallucinations in large language model outputs through self-consistency checking. It provides various methods to assess the factuality and consistency of generated text.
 
+SelfChatGPT was inspired by "SELFCHECKGPT: Zero-Resource Black-Box Hallucination Detection for Generative Large Language Models" Paper.  To read the full article, visit https://arxiv.org/pdf/2303.08896
+
+
 ## Features
 
 - Multiple consistency checking methods:
