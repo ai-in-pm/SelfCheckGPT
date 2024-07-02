@@ -120,6 +120,57 @@ To run tests with coverage report:
 pytest --cov=selfcheckgpt
 ```
 
+## Configuration
+
+SelfCheckGPT can be configured to use various language models, including OpenAI's GPT models (like ChatGPT). To use these models, you'll need to set up your API keys.
+Setting up API Keys
+
+OpenAI API (for GPT-4o, ChatGPT-3.5, etc.):
+
+Sign up for an account at OpenAI
+Generate an API key in your account dashboard
+Set the API key as an environment variable:
+
+```
+export OPENAI_API_KEY='your-api-key-here'
+```
+
+Alternatively, you can set it in your Python script:
+
+```
+import os
+os.environ['OPENAI_API_KEY'] = 'your-api-key-here'
+```
+Other APIs:
+
+If you're using other language model APIs, follow a similar process to obtain and set the necessary API keys.
+
+Note: Never commit your API keys to version control. Always use environment variables or a secure configuration file that is not tracked by git.
+
+Usage
+To use SelfCheckGPT with a specific language model, you'll need to provide a function that interfaces with that model's API. Here's an example using OpenAI's GPT-3:
+
+```
+import openai
+from selfcheckgpt import SelfCheckGPT
+
+def gpt3_generate(prompt: str) -> str:
+    response = openai.Completion.create(
+        engine="text-davinci-002",
+        prompt=prompt,
+        max_tokens=100
+    )
+    return response.choices[0].text.strip()
+
+# Initialize SelfCheckGPT with the GPT-3 generation function
+selfcheck = SelfCheckGPT(gpt3_generate)
+
+# Use SelfCheckGPT as before
+main_response = "The Earth is the third planet from the Sun."
+consistency_scores = selfcheck.check_consistency(main_response, method="nli")
+print(f"Consistency scores: {consistency_scores}")
+```
+
 ## Contributing
 
 We welcome contributions to SelfCheckGPT! Here's how you can contribute:
