@@ -2,8 +2,7 @@
 
 SelfCheckGPT is a Python library for detecting hallucinations in large language model outputs through self-consistency checking. It provides various methods to assess the factuality and consistency of generated text.
 
-SelfChatGPT was inspired by "SELFCHECKGPT: Zero-Resource Black-Box Hallucination Detection for Generative Large Language Models" Paper.  To read the full article, visit https://arxiv.org/pdf/2303.08896
-
+SelfCheckGPT was inspired by the SELFCHECKGPT: Zero-Resource Black-Box Hallucination Detection for Generative Large Language Models Paper. To read the full article, visit https://arxiv.org/pdf/2303.08896
 
 ## Features
 
@@ -107,9 +106,23 @@ To set up the development environment:
    make html
    ```
 
+## Testing
+
+We use pytest for testing. To run all tests:
+
+```bash
+pytest
+```
+
+To run tests with coverage report:
+
+```bash
+pytest --cov=selfcheckgpt
+```
+
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+We welcome contributions to SelfCheckGPT! Here's how you can contribute:
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
@@ -118,3 +131,35 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 5. Open a Pull Request
 
 Please make sure to update tests as appropriate and adhere to the code style guidelines.
+
+### Code Style
+
+We use Black for code formatting and Flake8 for linting. Please ensure your code passes both before submitting a pull request:
+
+```bash
+black .
+flake8 .
+```
+
+### Adding a New Consistency Checker
+
+To add a new consistency checker:
+
+1. Create a new file in `selfcheckgpt/consistency_checkers/`
+2. Implement the checker class with a `check_consistency` method
+3. Add appropriate tests in `tests/test_consistency_checkers/`
+4. Update `selfcheckgpt/selfcheckgpt.py` to include the new checker
+5. Update the README to mention the new checker in the Features section
+
+## Citing SelfCheckGPT
+
+If you use SelfCheckGPT in your research, please cite it as follows:
+
+```
+@software{selfcheckgpt2023,
+  author = {Your Name},
+  title = {SelfCheckGPT: Self-Consistency Checking for Language Model Outputs},
+  year = {2023},
+  url = {https://github.com/yourusername/selfcheckgpt}
+}
+```
