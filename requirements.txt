@@ -1,5 +1,35 @@
-```
+# Core dependencies
 numpy>=1.19.0
 torch>=1.7.0
 transformers>=4.0.0
-```
+
+# For BERTScore
+bert-score>=0.3.11
+
+# For NLP tasks
+nltk>=3.6.0
+
+# For NLI model
+sentencepiece>=0.1.95
+
+# For potential API interactions (if using OpenAI's GPT or similar)
+requests>=2.25.0
+
+# For advanced NLP tasks (optional, uncomment if needed)
+# spacy>=3.0.0
+
+# For testing
+pytest>=6.2.0
+
+# For type checking (optional, uncomment if needed)
+# mypy>=0.900
+
+# For code formatting (optional, uncomment if needed)
+# black>=21.5b1
+
+# For linting (optional, uncomment if needed)
+# flake8>=3.9.0
+
+# For documentation (optional, uncomment if needed)
+# sphinx>=3.5.0
+# sphinx-rtd-theme>=0.5.0
