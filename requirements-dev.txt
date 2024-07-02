@@ -1,0 +1,45 @@
+# Include all dependencies from requirements.txt
+-r requirements.txt
+
+# Testing
+pytest>=6.2.5
+pytest-cov>=2.12.1
+tox>=3.24.0
+
+# Type checking
+mypy>=0.910
+
+# Linting
+flake8>=3.9.2
+pylint>=2.8.3
+
+# Code formatting
+black>=21.6b0
+isort>=5.9.2
+
+# Documentation
+sphinx>=4.0.2
+sphinx-rtd-theme>=0.5.2
+
+# Packaging
+build>=0.5.1
+twine>=3.4.1
+
+# Debugging
+ipdb>=0.13.9
+
+# Notebook support (optional, uncomment if needed)
+# jupyter>=1.0.0
+# nbval>=0.9.6
+
+# Performance profiling (optional, uncomment if needed)
+# py-spy>=0.3.7
+
+# Security checking (optional, uncomment if needed)
+# bandit>=1.7.0
+
+# Dependency management
+pip-tools>=6.2.0
+
+# Pre-commit hooks
+pre-commit>=2.13.0
