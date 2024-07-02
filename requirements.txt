@@ -2,6 +2,7 @@
 numpy>=1.19.0
 torch>=1.7.0
 transformers>=4.0.0
+openai>=0.27.0
 
 # For BERTScore
 bert-score>=0.3.11
